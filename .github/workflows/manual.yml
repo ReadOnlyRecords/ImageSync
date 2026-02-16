@@ -26,6 +26,8 @@ jobs:
     - name: Create config
       run: echo $SKOPEO_CONFIG > skopeo_config.yaml
 
+    - run: cat skopeo_config.yaml
+    
     - name: Sync
       run: |
         skopeo sync --src yaml --dest docker --scoped \
