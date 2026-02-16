@@ -24,6 +24,8 @@ jobs:
         sudo apt-get -y install skopeo
 
     - name: Create config
+      env:
+        SKOPEO_CONFIG: ${{ secrets.SKOPEO_CONFIG  }}
       run: echo $SKOPEO_CONFIG > skopeo_config.yaml
 
     - run: cat skopeo_config.yaml
