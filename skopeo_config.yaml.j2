@@ -1,8 +1,11 @@
 reg.mini.dev:
   images:
-    nginx: []
-    python: []
-    14/node-fips-app-base-fb: []
+    nginx: 
+      - 1.29.5-202602081339
+    python: 
+      - 3.13.12
+    14/node-fips-app-base-fb: 
+      - 24.13.1-202602150948
   credentials:
     username: minimus
     password: {{ env['MINIMUS_TOKEN'] }}
