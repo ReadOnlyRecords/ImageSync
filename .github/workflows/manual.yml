@@ -32,7 +32,12 @@ jobs:
     
     - name: Sync
       run: |
+        skopeo login -u GHCR_USER -p $GHCR_PASS $GHCR_REGISTRY &&
         skopeo sync --src yaml --dest docker --scoped \
         --override-arch amd64 \
         skopeo_config.yaml \
-        https://ghcr.io/readonlyrecords
+        $GHCR_REGISTRY
+      env:
+        GHCR_USER: ${{ github.actor }}
+        GHCR_PASS: ${{ secrets.GITHUB_TOKEN }}
+        GHCR_REGISTRY: "https://ghcr.io/readonlyrecords"
