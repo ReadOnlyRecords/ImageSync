@@ -33,7 +33,7 @@ jobs:
     - name: Sync
       run: |
         skopeo login -u GHCR_USER -p $GHCR_PASS $GHCR_REGISTRY &&
-        skopeo sync --src yaml --dest docker --scoped \
+        skopeo sync --src yaml --dest docker \
         --override-arch amd64 \
         skopeo_config.yaml \
         $GHCR_REGISTRY
