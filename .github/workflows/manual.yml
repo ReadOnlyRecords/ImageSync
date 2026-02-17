@@ -40,4 +40,4 @@ jobs:
       env:
         GHCR_USER: ${{ github.actor }}
         GHCR_PASS: ${{ secrets.GITHUB_TOKEN }}
-        GHCR_REGISTRY: "https://ghcr.io/readonlyrecords"
+        GHCR_REGISTRY: "ghcr.io/readonlyrecords"
