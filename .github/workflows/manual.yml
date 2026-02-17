@@ -21,9 +21,7 @@ jobs:
       with:
         template: skopeo_config.yaml.j2
         output_file: skopeo_config.yaml
-
-    - run: cat skopeo_config.yaml
-    
+   
     - name: Sync
       run: |
         skopeo login -u GHCR_USER -p $GHCR_PASS $GHCR_REGISTRY &&
