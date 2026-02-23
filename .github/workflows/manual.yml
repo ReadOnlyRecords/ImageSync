@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   # enable Minimus Actions to trigger
   repository_dispatch: 
-    types: [test_minimus, cve_fixed_minimus]
+    types: [cve_fixed_minimus]
 
 jobs:
   sync:
